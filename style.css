@@ -1,0 +1,272 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url(video/vide.mp4);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#envelope {
+  position: relative;
+  height: 250px; /* Ukuran diperbesar */
+  width: 400px; /* Ukuran diperbesar */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 40%;
+  background-color: #9d0f7a;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#envelope:hover {
+  cursor: pointer;
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+.flap {
+  border-top: 170px solid #9b118f;
+  border-left: 210px solid transparent;
+  border-right: 210px solid transparent;
+  border-bottom: 130px solid transparent;
+  transform-origin: top;
+}
+
+.pocket {
+  border-left: 210px solid #bb23af;
+  border-right: 210px solid #bb23af;
+  border-bottom: 157px solid #c737aa;
+  border-top: 170px solid transparent;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.letter {
+  position: relative;
+  background-color: white;
+  width: 95%; /* Ukuran diperbesar */
+  height: 125%; /* Ukuran diperbesar */
+  top: 5%;
+  border-radius: 12px;
+  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.letter:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.words {
+  position: absolute;
+  left: 7%;
+  width: 85%;
+  height: 7%;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+.line1 {
+  top: 1%;
+}
+.line2 {
+  top: 7%;
+}
+.line3 {
+  top: 16%;
+  text-align: center;
+}
+.line4 {
+  top: 26%;
+  text-align: center;
+}
+.line5 {
+  top: 49%;
+  text-align: center;
+}
+.line6 {
+  top: 56%;
+  text-align: center;
+}
+
+.open .flap {
+  transform: rotatex(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.close .flap {
+  transform: rotatex(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 1s;
+  z-index: 5;
+}
+
+.open .letter {
+  transform: translatey(-170px);
+  transition: transform 0.4s 0.6s ease, z-index 0.6s;
+  z-index: 2;
+}
+
+.close .letter {
+  transform: translatey(0deg);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  background: #d00000;
+  width: 60px;
+  height: 100px;
+  left: 60px;
+  top: 0;
+  border-radius: 60px 60px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.close .heart {
+  opacity: 0;
+  animation: none;
+}
+
+.a1 {
+  left: 20%;
+  transform: scale(0.6);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+.a2 {
+  left: 55%;
+  transform: scale(1.2);
+  opacity: 1;
+  animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+.a3 {
+  left: 10%;
+  transform: scale(0.9);
+  opacity: 1;
+  animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -700px;
+  }
+}
+
+@keyframes sideSway {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 60px;
+  }
+}
+
+.reset {
+  text-align: center;
+}
+
+.reset button {
+  font-weight: 800;
+  font-style: normal;
+  transition: all 0.1s linear;
+  background-color: transparent;
+  border: solid 2px #b72cc4;
+  border-radius: 4px;
+  color: #b72cc4;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 20px;
+  margin-top: 205px;
+  padding: 12px;
+  line-height: 2.2em;
+  text-decoration: none;
+  min-width: 180px;
+  outline: none;
+  margin-left: 38px;
+}
+
+.reset button:hover {
+  background-color: #ff63e2;
+  cursor: pointer;
+  color: white;
+}
+
+.valentine {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(135, 64, 113);
+  font-size: 30px;
+  margin-top: 30px;
+  position: relative;
+  top: 38px; /* Geser ke bawah */
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}

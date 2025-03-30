@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Virtual Valentine's Day Card</title>
+
+    <!-- MathJax for rendering mathematical expressions -->
+    <script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 class="valentine">Hi, please open the e-letter for you!</h1>
+    <div class="envelope-wrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+          <p class="words line1">Dear Agni</p>
+          <p class="words line2">Minal Aidin Wal Faizin</p>
+          <p class="words line3">
+            Hopefully our sins will be reduced to a limit approaching zero and
+            blessings continue to infinity
+          </p>
+          <p class="words line4">
+            \[ \lim_{\text{Dosa} \to 0} \frac{\sum_{n=1}^{\infty}
+            \frac{\text{Hati}^n}{n!} + \int_{0}^{1} \text{Keikhlasan}(x)
+            dx}{\text{Kebahagiaan}} = \infty \]
+          </p>
+          <p class="words line5">Mohon Maaf Lahir dan Batin 1446H</p>
+          <p class="words line6">∮(1000+400+40+6)dt=1446H ✨🌙</p>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reset">
+      <button id="open">Open</button>
+      <button id="reset">Close</button>
+    </div>
+
+    <div class="hearts">
+      <div class="heart a1"></div>
+      <div class="heart a2"></div>
+      <div class="heart a3"></div>
+    </div>
+
+    <video autoplay loop muted playsinline id="background-video">
+      <source src="video/vide.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div id="content">
+      <!-- Konten lain tetap di sini -->
+    </div>
+
+    <!-- Script JS -->
+    <script src="./script.js"></script>
+  </body>
+</html>
